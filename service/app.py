@@ -12,6 +12,11 @@ def default_route():
     fetch_data(payload)
     return "This works"
 
+@app.route("/get_quick_statistics", methods=["GET"])
+def get_quick_stats():
+    from connection_management import fetch_quick_stats
+    return ""
+
 
 if __name__ == "__main__":
     app.run(port=8080, debug=True)
