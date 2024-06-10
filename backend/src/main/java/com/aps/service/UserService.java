@@ -1,11 +1,12 @@
 package com.aps.service;
 
-public class UserService {
-	public void authentication() {
+import com.aps.dto.UserDto;
+import com.aps.entity.User;
 
-	}
+public interface UserService {
+	void saveUser(UserDto userDto);
 
-	public void registration() {
+	User findUserByEmail(String email);
 
-	}
+	List<UserDto> findAllUsers();
 }
