@@ -7,9 +7,9 @@ from pymongo import MongoClient
 def fetch_data(payload):
     type = payload["type"]
     if(type == "mongodb"):
-        getDataFromMongoDB(payload)
+        return getDataFromMongoDB(payload)
     elif type == "mysql":
-        getDataFromMySQLDB(payload)
+        return getDataFromMySQLDB(payload)
 
 def getDataFromMongoDB(payload):
 
