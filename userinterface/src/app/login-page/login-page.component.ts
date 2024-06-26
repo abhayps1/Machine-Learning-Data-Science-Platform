@@ -23,7 +23,7 @@ export class LoginPageComponent {
       password : this.password
     }
 
-    this.http.post("http://localhost:8080/api/login", loginData)
+    this.http.post("https://localhost:8080/api/login", loginData)
     .subscribe(response => {
       console.log("Login Successful", response);
     }, error => {
