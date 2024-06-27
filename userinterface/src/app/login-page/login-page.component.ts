@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { HttpClient }    from '@angular/common/http';
 import { HttpClientModule } from '@angular/common/http';
-import { error } from 'console';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login-page',
@@ -15,7 +15,13 @@ export class LoginPageComponent {
   username: string = "";
   password: string = "";
 
-  constructor(private http : HttpClient){}
+  constructor(private http : HttpClient, private router : Router){}
+
+    signUp(){
+      console.log("Your life is hell ! ")
+      this.router.navigate(["../register"])
+    }
+  
 
   onSubmit(){
     const loginData = {
@@ -30,6 +36,5 @@ export class LoginPageComponent {
       console.log("Login Failed with Error : ", error);
     }
     )
-
   }
 }
